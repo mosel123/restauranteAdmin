@@ -106,17 +106,16 @@
                 <label>Ingrediente</label>
                 <select class="custom-select" type="text" class="form-control" id="tipo_comida" placeholder="COMIDA" required name="pa_id_tipo_comida" value="<?php echo($platillo->pa_id_tipo_comida); ?>">
                     <option selected>Selecciona ingrediente</option>
-                    <option value="8">DESAYUNO</option>
-                    <option value="9">MERIENDA</option>
-                    <option value="10">COMIDA</option>
-                    <option value="11">COLACIÓN</option>
+                    <option>x</option>
+                    <option>y</option>
+                    <option>z</option>
                 </select>
             </div>
           </div>
           <div class="col-4">
             <div class="form-group">
-              <label for="">Cantidad</label>
-              <input type="number" class="form-control" id="" placeholder="10">
+                <label for="">Cantidad</label>
+                <input type="text" class="form-control" id="cantidad" placeholder="10" required name="in_unidad">
             </div>
           </div>
       </form>
@@ -136,8 +135,8 @@
           <td>Pan</td>
           <td>2</td>
           <td>
-            <button type="button" class="btn btn-primary btn-sm"></button>
-            <button type="button" class="btn btn-danger btn-sm"></button>
+            <button type="button" class="btn btn-primary btn-sm"><span class="fas fa-pencil-alt"></span></button>
+            <button type="button" class="btn btn-danger btn-sm"><span class="fas fa-trash-alt"></span></button>
           </td>
         </tr>
       </tbody>
