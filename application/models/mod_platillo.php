@@ -11,7 +11,7 @@
             $this->db->initialize();
         }
 
-        // Obtiene el listado de ingredientes
+        // Obtiene el listado de platillos
         public function Listado($pagina)
         {
             $this->db->select('
@@ -37,7 +37,7 @@
             return false;
         }
 
-        // Obtiene la información de un ingrediente
+        // Obtiene la información de un platillo
         public function Obtener($id)
         {
             $this->db->select('
@@ -61,17 +61,17 @@
             return ($response->num_rows() > 0) ? $response->row(0) : false;
         }
 
-        // Obtiene el total de registros de ingredientes
+        // Obtiene el total de registros de platillos
         public function Total()
         {
             return $this->db->count_all("platillos");
         }
 
-        // ELimina un ingrediente
+        // ELimina un platillo
         public function Eliminar($id)
         {
             $response = array(
-                'message' => 'No se pudo eliminar el ingrediente',
+                'message' => 'No se pudo eliminar el platillo',
                 'done' => false
             );
 
@@ -80,7 +80,7 @@
                     $this->db->where('pa_id', $id);
                     $this->db->delete('platillos');
 
-                    $response['message'] = 'Se eliminó el ingrediente';
+                    $response['message'] = 'Se eliminó el platillo';
                     $response['done'] = true;
             }else
                 $response['message'] = ' No existe el platillo que intenta eliminar';
@@ -88,7 +88,7 @@
             return $response;
         }
 
-        // Guarda un ingrediente
+        // Guarda un platillo
         public function Guardar()
         {
             $response = array(
@@ -111,13 +111,13 @@
                 $this->db->update('platillos', $values);
             }
 
-            $response['message'] = 'Se guardó la información del ingrediente';
+            $response['message'] = 'Se guardó la información del platillo';
             $response['done'] = true;
 
             return $response;
         }
     
-        // Verifica si existe un ingrediente 
+        // Verifica si existe un platillo 
         public function Existe($id, $nombre, $descripcion, $precio, $tipo_comida)
         {
             $existe = 

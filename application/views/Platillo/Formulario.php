@@ -27,15 +27,16 @@
         endif;
     ?>
 </div>
+<div class="container">
 <div class="row">
     <form method="POST" action="<?php echo(base_url('Platillo/Guardar')); ?>" class="col">
         <div class="form-group row">
-            <div class="col-8">
+            <div class="col-12">
                 <label for="platillo" class="">
                     Nombre de platillo
                 </label>
             </div>
-            <div class="col-8">
+            <div class="col-12">
                 <input type="text" class="form-control" id="platillo" placeholder="Hamburguesa" required name="pa_nombre" value="<?php echo($platillo->pa_nombre); ?>" autocomplete="off">
                 <input type="hidden" readonly="readonly" name="pa_id"  value="<?php echo($platillo->pa_id); ?>">
                 <small class="form-text text-muted">
@@ -62,7 +63,7 @@
                    Tipo de comida
                 </label>
             </div>
-            <div class="col-12 col-md-3">
+            <div class="col-12 col-md-6">
                 <select class="custom-select" type="text" class="form-control" id="tipo_comida" placeholder="COMIDA" required name="pa_id_tipo_comida" value="<?php echo($platillo->pa_id_tipo_comida); ?>">
                     <option selected>Selecciona tipo de comida</option>
                     <option value="8">DESAYUNO</option>
@@ -81,8 +82,8 @@
                    Descripción
                 </label>
             </div>
-            <div class="col-12 col-md-3">
-                <input type="text" class="form-control" id="descripcion" placeholder="Poner carne en un pan" required name="pa_descripcion" value="<?php echo($platillo->pa_descripcion); ?>">
+            <div class="col-12 col-md-12">
+                <textarea type="text" class="form-control" id="descripcion" placeholder="Poner carne en un pan" required name="pa_descripcion" value="<?php echo($platillo->pa_descripcion); ?>"></textarea>
                 <small class="form-text text-muted">
                     Obligatorio
                 </small>
@@ -96,4 +97,52 @@
             </div>
         </div>
     </form>
+    <div class="col">
+      <h2 class="mb-5">Ingredientes</h2>
+      <form>
+        <div class="row">
+          <div class="col-6">
+            <div class="form-group">
+                <label>Ingrediente</label>
+                <select class="custom-select" type="text" class="form-control" id="tipo_comida" placeholder="COMIDA" required name="pa_id_tipo_comida" value="<?php echo($platillo->pa_id_tipo_comida); ?>">
+                    <option selected>Selecciona ingrediente</option>
+                    <option value="8">DESAYUNO</option>
+                    <option value="9">MERIENDA</option>
+                    <option value="10">COMIDA</option>
+                    <option value="11">COLACIÓN</option>
+                </select>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="form-group">
+              <label for="">Cantidad</label>
+              <input type="number" class="form-control" id="" placeholder="10">
+            </div>
+          </div>
+      </form>
+      <button type="submit" class="btn btn-primary float-right mt-4 mb-3">Agregar</button>
+    </div>
+    <!--Tabla de ingredientes-->
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">Ingrediente</th>
+          <th scope="col">Cantidad</th>
+          <th scope="col">Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Pan</td>
+          <td>2</td>
+          <td>
+            <button type="button" class="btn btn-primary btn-sm"></button>
+            <button type="button" class="btn btn-danger btn-sm"></button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</div>
 </div>
